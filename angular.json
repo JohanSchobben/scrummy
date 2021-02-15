@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "scrummy"
+    }
+  },
+  "defaultProject": "scrummy",
+  "cli": {
+    "analytics": "ba2cce8c-fa72-4aa0-9789-d317991db14b"
+  }
 }

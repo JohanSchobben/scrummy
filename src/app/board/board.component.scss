@@ -1,0 +1,13 @@
+.board {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+}
+.list {
+  border: 1px solid red;
+}
+
+
+app-item-card {
+  margin-bottom: 1rem;
+}

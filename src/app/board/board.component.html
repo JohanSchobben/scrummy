@@ -1,0 +1,28 @@
+<div class="board">
+  <div class="list"
+       #todoList="cdkDropList"
+       cdkDropList
+       [cdkDropListData]="todo"
+       (cdkDropListDropped)="drop($event)"
+       [cdkDropListConnectedTo]="[inProgressList, doneList]">
+    <div *ngFor="let story of todo" cdkDrag>{{story.title}}</div>
+  </div>
+  <div class="list"
+       #inProgressList="cdkDropList"
+       cdkDropList
+       [cdkDropListData]="inProgress"
+       (cdkDropListDropped)="drop($event)"
+       [cdkDropListConnectedTo]="[todoList, doneList]">
+    <app-item-card *ngFor="let story of inProgress" cdkDrag [item]="story"></app-item-card>
+  </div>
+  <div class="list"
+       #doneList="cdkDropList"
+       cdkDropList
+       [cdkDropListData]="done"
+       (cdkDropListDropped)="drop($event)"
+       [cdkDropListConnectedTo]="[todoList, inProgressList]">
+    <div *ngFor="let story of done" cdkDrag>{{story.title}}</div>
+  </div>
+
+</div>
+<button (click)="print()">log</button>
